@@ -127,48 +127,64 @@ int main()
 		
 		int laco=1; // definindo a variavel de repeticao
 		
-		for(laco=1;laco=1;) // iniciando repeticao do menu
+		char senha[10]="a";//definido variavel senha
+		
+		int comparacao;//definindo variavel para cpnfirmacao de senha 
+		
+		printf("### Cartorio da EBAC###\n\n");// Inicio login
+		printf("Login de administrador!\n\nDigite sua senha: ");
+		scanf("%s", senha);
+		
+		comparacao = strcmp(senha, "admin");//usando comando de comparacao
+		
+		if (comparacao == 0)//comparando senha 
 		{
-			
-			system("cls");//responsavel por limpar a tela
-						
-			setlocale(LC_ALL, "portuguese"); // definindo a linguagem para manter a acentuacao
-			
-			printf("### Cartorio da EBAC###\n\n"); // inicio do menu
-			printf("Escolha a opcao desejada no menu:\n\n");
-			printf("\t1 - Registrar CPF\n");
-			printf("\t2 - Consultar CPF\n");
-			printf("\t3 - Deletar CPF\n");
-			printf("\t4 - Sair do sistema\n\n");
-			printf("Opcao desejada: "); // fim do menu
-			
-			scanf("%d", &opcao); // armazenando a escolha do usuario
-			
-			system("cls");//responsavel por limpar a tela
-			
-			switch(opcao) // inicio da selecao do menu
+			for(laco=1;laco=1;) // iniciando repeticao do menu
 			{
-				case 1:
-					registro();//chamada de funcoes
-				break;
 				
-				case 2:
-					consulta();
-				break;
+				system("cls");//responsavel por limpar a tela
+							
+				setlocale(LC_ALL, "portuguese"); // definindo a linguagem para manter a acentuacao
 				
-				case 3:
-					deletar();
-				break;
+				printf("### Cartorio da EBAC###\n\n"); // inicio do menu
+				printf("Escolha a opcao desejada no menu:\n\n");
+				printf("\t1 - Registrar CPF\n");
+				printf("\t2 - Consultar CPF\n");
+				printf("\t3 - Deletar CPF\n");
+				printf("\t4 - Sair do sistema\n\n");
+				printf("Opcao desejada: "); // fim do menu
 				
-				case 4:
-					printf("Obrigado por utilizar o sistema!.\n");
-					return 0;
-				break;
+				scanf("%d", &opcao); // armazenando a escolha do usuario
+				
+				system("cls");//responsavel por limpar a tela
+				
+				switch(opcao) // inicio da selecao do menu
+				{
+					case 1:
+						registro();//chamada de funcoes
+					break;
 					
-				default:
-					printf("Essa opcao nao esta disponivel!\n");
-					system("pause");
-				break; // fim da selecao
-			}
-		} // fim da repeticao do menu
+					case 2:
+						consulta();
+					break;
+					
+					case 3:
+						deletar();
+					break;
+					
+					case 4:
+						printf("Obrigado por utilizar o sistema!.\n");
+						return 0;
+					break;
+						
+					default:
+						printf("Essa opcao nao esta disponivel!\n");
+						system("pause");
+					break; // fim da selecao
+				}
+			} // fim da repeticao do menu
+		}	
+		else
+		printf("Senha incorreta!");
+	
 	}
